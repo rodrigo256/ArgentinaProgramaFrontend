@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "default": "portfolio-bbe9d",
+    "prod": "rodrigof-portfolio"
+  },
+  "targets": {}
+}

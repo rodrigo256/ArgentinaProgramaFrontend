@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TokenService } from 'src/app/service/token.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-admin',
@@ -9,7 +10,8 @@ import { TokenService } from 'src/app/service/token.service';
 export class HomeAdminComponent implements OnInit {
 
   constructor(
-    private tokenService: TokenService
+    private tokenService: TokenService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -21,6 +23,8 @@ export class HomeAdminComponent implements OnInit {
   }
   onLogOut(): void{
     this.tokenService.logOut();
-    window.location.reload();
+    this.router.navigate(['/']);
+    /*     window.location.reload();
+ */
   }
 }

@@ -12,7 +12,7 @@ export class NavbarComponent implements OnInit {
   isLogged = false;
 
   constructor(
-    /* private router: Router */
+    private router: Router,
     private tokenService: TokenService
   ) { }
 
@@ -25,7 +25,8 @@ export class NavbarComponent implements OnInit {
   }
   onLogOut(): void{
     this.tokenService.logOut();
-    window.location.reload();
+    this.router.navigate(['/']);
+   /*  window.location.reload(); */
   }
 
   /*   login() {

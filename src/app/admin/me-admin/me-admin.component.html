@@ -1,0 +1,50 @@
+<section id="me">
+    <div class="mb-2">
+        <div class="row">
+            <div class="col-md-12">
+                <label for=""> <span><strong>Información personal</strong></span></label>
+                <div class="border-bottom">
+                    <form class="mb-2" (ngSubmit)="save()" #f="ngForm" novalidate>
+                        <div class="mb-3">
+                            <div class=" ">
+                                <div class="col-md-12 mb-3">
+                                    <label for="nameFormControlInput1" class="form-label">Nombre</label>
+                                    <input type="text" class="form-control col-md-12" id="nameFormControlInput1" placeholder=""
+                                        [(ngModel)]="persona.nombre" name="name">
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <label for="lastNameFormControlInput1" class="form-label">Apellido</label>
+                                    <input type="text" class="form-control col-md-6" id="lastNameFormControlInput1"
+                                        placeholder="" [(ngModel)]="persona.apellido" name="lastname">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="experienceFormControlInput1" class="form-label">Experiencia laboral (Años)</label>
+                            <input type="text" class="form-control" id="experienceFormControlInput1" placeholder=""
+                                [(ngModel)]="persona.experiencia_laboral" name="experiencia_laboral">
+                        </div>
+                        <div class="mb-3">
+                            <label for="emailFormControlTextarea1" class="form-label">Correo</label>
+                            <input class="form-control" id="emailFormControlTextarea1" rows="3"
+                                [(ngModel)]="persona.correo" type="email" name="correo">
+                        </div>
+                        <div class="mb-3">
+                            <label for="titleFormControlTextarea1" class="form-label">Titulo</label>
+                            <input class="form-control" id="titleFormControlTextarea1" rows="3"
+                                [(ngModel)]="persona.titulo" name="titulo">
+                        </div>
+                        <div class="mb-3">
+                            <label for="photoFormControlTextarea1" class="form-label">Foto de perfil (URL)</label>
+                            <input class="form-control" id="photoFormControlTextarea1" rows="3"
+                                [(ngModel)]="persona.url_foto" name="foto">
+                        </div>
+                        <div class="text-end">
+                            <button [disabled]="!f.valid" class="btn btn-primary">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

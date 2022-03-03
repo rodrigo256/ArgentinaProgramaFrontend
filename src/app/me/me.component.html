@@ -1,0 +1,21 @@
+<div>
+    <div class="img-project" [ngStyle]="{'background-image':' url(' + (persona?.url_foto ? persona?.url_foto : '../../assets/img-not-found.jpg') + ')',
+        'width': '100%', 
+        'height': '55vh',
+        'background-position': 'center center', 
+        'background-repeat': 'no-repeat', 
+        'background-size': 'cover'}">
+    </div>
+    <div class="title p-2">
+        {{persona?.nombre}} {{persona?.apellido}}
+    </div>
+    <div class="subtitle p-2 pb-0 pt-0">
+        {{persona?.titulo}}
+        <div class="content">
+            <div class="mt-1"><i class="bi bi-check-circle-fill"></i> Experiencia laboral:
+                {{persona?.experiencia_laboral}} {{persona?.experiencia_laboral > 1 ? 'años.' : 'año.'}}</div>
+            <div class="mt-1"><i class="bi bi-check-circle-fill"></i> Correo: {{persona?.correo}}</div>
+            <div class="mt-1"><i class="bi bi-check-circle-fill"></i> País: {{persona?.pais}}</div>
+        </div>
+    </div>
+</div>

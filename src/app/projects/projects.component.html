@@ -1,0 +1,68 @@
+<section id="projects">
+    <div class="mb-2">
+        <div class="row align-items-start">
+            <div class="col-md-12">
+                <div class="content-about-me">
+                    <div *ngIf="existeProyecto; then thenBlock else elseBlock"></div>
+                    <ng-template #thenBlock>
+                        <div>
+                            <div class="accordion accordion-flush" [attr.id]="'accordionFlush'">
+                                <div class="accordion-item" *ngFor="let proyecto of proyectos ;index as i;">
+                                    <h2 class="accordion-header" [attr.id]="'flush-headingOne'+i">
+                                        <button class="accordion-button button-custom collapsed" type="button"
+                                            data-bs-toggle="collapse" [attr.data-bs-target]="'#flush-collapseOne'+i"
+                                            aria-expanded="false" [attr.aria-controls]="'flush-collapseOne'+i">
+                                            {{proyecto.titulo}}
+                                        </button>
+                                    </h2>
+                                    <div [attr.id]="'flush-collapseOne'+i" class="accordion-collapse collapse"
+                                        [attr.aria-labelledby]="'flush-headingOne'+i"
+                                        [attr.data-bs-parent]="'#accordionFlush'">
+                                        <div class="accordion-body">
+                                            <div class="row">
+                                                <div class="col-md-5">
+                                                    <div class="img-project"
+                                                    [ngStyle]="{'background-image':' url(' + (proyecto?.url_portada ? proyecto?.url_portada : '../../assets/img-not-found.jpg') + ')',
+                                                    'width': '100%', 
+                                                    'height': '200px',
+                                                    'border-radius': '5px', 
+                                                    'background-position': 'center center', 
+                                                    'background-repeat': 'no-repeat', 
+                                                    'background-size': 'cover'}">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-7 d-flex flex-column justify-content-around"
+                                                    style="text-align: center">
+                                                    {{proyecto.descripcion}}
+                                                    <div class="row">
+                                                        <div class="col-md-6 mb-1"><a target="_blank" href="{{proyecto.url_git}}"
+                                                                class=" w-100 btn btn-primary bt-custom"
+                                                                [ngClass]="proyecto?.url_git ? '' : 'disabled' "><i
+                                                                    class="bi-github" role="img"
+                                                                    aria-label="GitHub"></i> GitHub</a></div>
+                                                        <div class="col-md-6 mb-1"><a target="_blank" href="{{proyecto.url_demo}}"
+                                                                class=" w-100 btn btn-primary bt-custom"
+                                                                [ngClass]="proyecto?.url_demo ? '' : 'disabled' "><i
+                                                                    class="bi bi-play-btn-fill"></i> Demo</a></div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template #elseBlock>
+                        <div class="alert alert-danger d-flex align-items-center" role="alert">
+                            <div>
+                                ¡Pronto habrá contenido!
+                            </div>
+                        </div>
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

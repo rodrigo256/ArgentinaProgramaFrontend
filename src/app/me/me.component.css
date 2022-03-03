@@ -1,0 +1,35 @@
+.title{
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: .0125em;
+    line-height: 2rem;
+    word-break: break-all;
+}
+.subtitle{
+    font-size: .9rem;
+}
+
+.photo-profile {
+  width: 100%;
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  height: 55vh;
+}
+
+@media only screen and (min-width: 900px) {  
+  .content{
+    font-size: 1rem;
+  }
+  .subtitle{
+      font-size: 1rem;
+  }
+}  
+@media only screen and (max-width: 800px) {  
+    .content{
+      font-size: .85rem;
+    }
+}  

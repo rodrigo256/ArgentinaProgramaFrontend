@@ -1,0 +1,46 @@
+<section id="experiencie">
+    <div class="mb-2">
+        <div class="row">
+            <div class="col-md-12">
+                <label for=""> <span><strong>{{skill.id ? 'Editar' : 'Nueva'}} habilidad</strong></span></label>
+                <div class="border-bottom">
+                    <form #f="ngForm" novalidate class="mb-2" (ngSubmit)="save()">
+                        <div class="mb-3">
+                            <label for="nameFormControlInput1" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nameFormControlInput1" placeholder="" [(ngModel)]="skill.nombre" name="nombre">
+                        </div>
+                        <div class="mb-3">
+                            <label for="urlFormControlTextarea1" class="form-label">Url de la imagen</label>
+                            <input type="text" class="form-control" id="urlFormControlTextarea1" rows="3" [(ngModel)]="skill.url_imagen" name="url_imagen">
+                        </div>
+                        <div class="text-end">
+                            <button [disabled]="!f.valid"  class="btn btn-primary">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="content-experience mt-2">
+                    <ul class="p-0">
+                        <div class="row">
+                            <div *ngFor="let skill of skills" class="mb-3 d-flex justify-content-between align-items-center">
+                                <div class="col-sm-10">
+                                    <div>
+                                        <strong>
+                                            {{skill.nombre}}
+                                        </strong>
+                                    </div>
+                                    <div>
+                                        <img style="width: 100px; height: 100px;" src="{{skill.url_imagen}}" alt="{{skill.nombre}}" title="{{skill.nombre}}">
+                                    </div>
+                                </div>
+                                <div class="text-end col-sm-2">
+                                    <button type="button" class="btn btn-warning m-1" (click)="edit(skill)" >Editar</button>
+                                    <button type="button" class="btn btn-danger m-1" (click)="delete(skill)" >Borrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

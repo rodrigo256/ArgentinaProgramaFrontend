@@ -1,0 +1,13 @@
+<div>
+    <label class="form-label"><strong>Acerca de</strong></label>
+    
+    <form #f="ngForm" novalidate class="mb-3" (ngSubmit)="save()">
+        <div class="mb-3">
+            <textarea class="form-control" placeholder="Acerca de..." [(ngModel)]="informaciones.acerca"
+                name="acerca" id="floatingTextarea2" style="height: 200px"></textarea>
+        </div>
+        <div class="text-end">
+            <button [disabled]="!f.valid" class="btn btn-primary">Guardar</button>
+        </div>
+    </form>
+</div>

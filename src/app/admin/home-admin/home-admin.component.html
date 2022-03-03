@@ -1,0 +1,85 @@
+<section class="h-100">
+    <div style="background-color: white;">
+
+        <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+            <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Rodrigo Fernández</a>
+            <button class="navbar-toggler position-absolute d-md-none collapsed" id="sidebarMenuButton" type="button"
+                data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </header>
+
+        <div class="container-fluid h-100">
+            <div class="row">
+                <nav id="sidebarMenu" class="top-0 col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+                    <div class="position-sticky pt-3">
+                        <ul class="nav flex-column" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link w-100  button-custom" id="home-tab" (click)="removeModal()" data-bs-toggle="tab"
+                                    data-bs-target="#acerca_de" type="button" role="tab" aria-controls="home"
+                                    aria-selected="true">Acerca de</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link w-100  button-custom" id="profile-tab" (click)="removeModal()" data-bs-toggle="tab"
+                                    data-bs-target="#experience" type="button" role="tab" aria-controls="profile"
+                                    aria-selected="false">Experiencia laboral</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link w-100  button-custom" id="education-tab" (click)="removeModal()" data-bs-toggle="tab" data-bs-target="#education"
+                                    type="button" role="tab" aria-controls="education"
+                                    aria-selected="false">Formación profesional </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link w-100  button-custom" id="me-tab" (click)="removeModal()" data-bs-toggle="tab" data-bs-target="#me"
+                                    type="button" role="tab" aria-controls="me"
+                                    aria-selected="false">Información personal </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link w-100  button-custom" id="project-tab" (click)="removeModal()" data-bs-toggle="tab" data-bs-target="#project"
+                                    type="button" role="tab" aria-controls="project"
+                                    aria-selected="false">Proyectos </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link w-100  button-custom" id="skill-tab" (click)="removeModal()" data-bs-toggle="tab" data-bs-target="#skill"
+                                    type="button" role="tab" aria-controls="skill"
+                                    aria-selected="false">Habilidades </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link w-100  button-custom" id="skill-tab" (click)="removeModal()" data-bs-toggle="tab" data-bs-target="#skill"
+                                    type="button" role="tab" aria-controls="skill"
+                                    aria-selected="false" (click)="onLogOut()">Salir </button>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <main style="height: 95vh;" class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                    <div
+                        class="justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 ">
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="acerca_de" role="tabpanel" aria-labelledby="home-tab">
+                                <app-about-me-admin></app-about-me-admin>
+                            </div>
+                            <div class="tab-pane fade" id="experience" role="tabpanel" aria-labelledby="profile-tab">
+                                <app-experience-admin></app-experience-admin></div>
+                            <div class="tab-pane fade" id="education" role="tabpanel" aria-labelledby="education-tab">
+                                <app-education-admin></app-education-admin>
+                            </div>
+                            <div class="tab-pane fade" id="me" role="tabpanel" aria-labelledby="me-tab">
+                               <app-me-admin></app-me-admin>
+                            </div>
+                            <div class="tab-pane fade" id="project" role="tabpanel" aria-labelledby="project-tab">
+                                <app-project-admin></app-project-admin>
+                             </div>
+                             <div class="tab-pane fade" id="skill" role="tabpanel" aria-labelledby="skill-tab">
+                               <app-skill-admin></app-skill-admin>
+                             </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+
+    </div>
+</section>

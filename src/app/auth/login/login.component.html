@@ -1,0 +1,33 @@
+<app-navbar></app-navbar>
+<section style="margin: 80px 5px 0px 5px; height: 90vh;">
+    <div class="text-center" *ngIf="isLogged; else loggedOut">
+        <h2>Ya has iniciado sesión</h2>
+        <button [routerLink]="['/']" class=" btn btn-lg btn-primary">Inicio</button>
+    </div>
+    <ng-template #loggedOut>
+        <body class="text-center">
+            <main class="form-signin">
+                <form #f="ngForm" (ngSubmit)="onLogin()" novalidate>
+                    <h1 class="h3 mb-3 fw-normal">Por favor, inicie sesión</h1>
+
+                    <div class="form-floating">
+                        <input type="text" name="nombreUsuario" id="nombreUsuario" class="form-control"
+                            [(ngModel)]="nombreUsuario" placeholder="Nombre de Usuario" required>
+                        <label for="floatingInput">Usuario</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="password" name="password" id="password" class="form-control" [(ngModel)]="password"
+                            placeholder="constraseña" required>
+                        <label for="floatingPassword">Contraseña</label>
+                    </div>
+
+                    <button class="w-100 btn btn-lg btn-primary" [disabled]="!f.valid" type="submit">Iniciar
+                        sesión</button>
+
+                </form>
+                <div *ngIf="f.submitted && isLoginFail" class="alert alert-danger mt-3">Error en el login:
+                    {{errMsj}}</div>
+            </main>
+        </body>
+    </ng-template>
+</section>

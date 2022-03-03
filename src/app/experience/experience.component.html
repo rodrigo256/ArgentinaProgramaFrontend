@@ -1,0 +1,19 @@
+<section id="experiencie">
+    <div class="mb-2">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="content-about-me">
+                    <ul class="p-0">
+
+                        <div *ngFor="let experiencia of experiencias" class="mb-2"> <i class="bi bi-bookmark-star-fill"> <strong> {{experiencia.titulo}}</strong>
+                                <div>
+                                    {{experiencia.descripcion}}
+                                </div>
+                            </i>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

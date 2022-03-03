@@ -1,0 +1,51 @@
+<section id="experiencie">
+    <div class="mb-2">
+        <div class="row">
+            <div class="col-md-12">
+                <label for=""> <span><strong>{{experiencia.id ? 'Editar' : 'Nueva'}} experiencia
+                            laboral</strong></span></label>
+                <div class="border-bottom">
+                    <form class="mb-2" #f="ngForm" (ngSubmit)="save()" novalidate>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Titulo</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder=""
+                                [(ngModel)]="experiencia.titulo" name="titulo">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">descripción</label>
+                            <input class="form-control" id="exampleFormControlTextarea1" rows="3"
+                                [(ngModel)]="experiencia.descripcion" name="descripcion">
+                        </div>
+                        <div class="text-end">
+                            <button [disabled]="!f.valid" class="btn btn-primary">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="content-experience mt-2">
+                    <ul class="p-0">
+                        <div class="row">
+                            <div *ngFor="let experiencia of experiencias" class="mb-3 d-flex justify-content-between">
+                                <div class="col-sm-10">
+                                    <div>
+                                        <strong>
+                                            {{experiencia.titulo}}
+                                        </strong>
+                                    </div>
+                                    <div>
+                                        {{experiencia.descripcion}}
+                                    </div>
+                                </div>
+                                <div class="text-end col-sm-2">
+                                    <button type="button" class="btn btn-warning m-1"
+                                        (click)="edit(experiencia)">Editar</button>
+                                    <button type="button" class="btn btn-danger m-1"
+                                        (click)="delete(experiencia)">Borrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,52 @@
+<section id="experiencie">
+    <div class="mb-2">
+        <div class="row">
+            <div class="col-md-12">
+                <label for=""> <span><strong>{{formacion.id ? 'Editar' : 'Nueva'}} formación
+                            profesional</strong></span></label>
+                <div class="border-bottom">
+                    <form #f="ngForm" class="mb-2" (ngSubmit)="save()" novalidate>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Titulo</label>
+                            <input type="email" class="form-control"  id="exampleFormControlInput1"
+                                [(ngModel)]="formacion.titulo" name="titulo">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">descripción</label>
+                            <input class="form-control" id="exampleFormControlTextarea1"  rows="3"
+                                [(ngModel)]="formacion.descripcion" name="descripcion">
+                        </div>
+                        <div class="text-end">
+                            <button [disabled]="!f.valid" class="btn btn-primary">Guardar</button>
+                        </div>
+                    </form>
+
+                </div>
+                <div class="content-experience mt-2">
+                    <ul class="p-0">
+                        <div class="row">
+                            <div *ngFor="let formacion of formaciones" class="mb-3 d-flex justify-content-between">
+                                <div class="col-sm-10">
+                                    <div>
+                                        <strong>
+                                            {{formacion.titulo}}
+                                        </strong>
+                                    </div>
+                                    <div>
+                                        {{formacion.descripcion}}
+                                    </div>
+                                </div>
+                                <div class="text-end col-sm-2">
+                                    <button type="button" class="btn btn-warning m-1"
+                                        (click)="edit(formacion)">Editar</button>
+                                    <button type="button" class="btn btn-danger m-1"
+                                        (click)="delete(formacion)">Borrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

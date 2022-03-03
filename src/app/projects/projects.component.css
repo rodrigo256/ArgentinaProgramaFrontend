@@ -1,0 +1,33 @@
+.container{
+    margin: auto;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    border-radius: 25px;
+}
+.basic-information li{
+    list-style:none;
+}
+.bt-custom{
+    background-color: #1976d2;
+}
+
+.button-custom:hover{
+    background-color: #e7f1ff;
+}
+
+.button-custom:focus{
+    outline:none;
+    box-shadow: inset 0 0px 0px ;
+    
+}
+.button-custom{
+    border-bottom: 1px solid #8080803b;
+}
+.accordion-button:not(.collapsed) {
+    color: #000;
+}
+.accordion-body{
+    background: #f7f7f7;
+}
+.img-projetc{
+    
+}

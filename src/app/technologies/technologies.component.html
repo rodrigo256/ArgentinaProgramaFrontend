@@ -1,0 +1,21 @@
+<section>
+    <div class="container">
+
+        <div *ngIf="epicFunction(); else elseBlock">
+            <div class="row">
+                <div *ngFor="let tecnologia of tecnologias" class="col-6 p-3   technology">
+                    <img src="{{tecnologia?.url_imagen ? tecnologia?.url_imagen : '../../assets/img-not-found.jpg'}}"
+                        alt="{{tecnologia?.nombre}}" title="{{tecnologia?.nombre}}">
+                </div>
+            </div>
+        </div>
+        <ng-template #elseBlock>
+            <div class="row">
+                <div *ngFor="let tecnologia of tecnologias" class="col-md-2 p-3 m-2 technology">
+                    <img src="{{tecnologia?.url_imagen ? tecnologia?.url_imagen : '../../assets/img-not-found.jpg'}}"
+                        alt="{{tecnologia?.nombre}}" title="{{tecnologia?.nombre}}">
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</section>

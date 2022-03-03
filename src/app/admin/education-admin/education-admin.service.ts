@@ -21,7 +21,6 @@ export class EducationAdminService {
   }
 
   update(id: number, formacion: any) {
-    console.log(id,   formacion)
     return this.http.put(`${API_BASE}/formaciones/${id}`, formacion)
   }
 

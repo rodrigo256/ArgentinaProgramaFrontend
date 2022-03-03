@@ -27,7 +27,6 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log(this.tokenService.getToken())
     if (this.tokenService.getToken()) {
       this.isLogged = true;
       this.isLoginFail = false;

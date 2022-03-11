@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 
 const API_BASE = 'http://localhost:8080'
@@ -13,18 +14,18 @@ export class AboutMeAdminService {
   ) { }
 
   getAbout(){
-    return this.http.get(`${API_BASE}/info`)
+    return this.http.get(`${environment.apiUrl}/info`)
   }
 
   create(info: any){
-    return this.http.post(`${API_BASE}/info`, info)
+    return this.http.post(`${environment.apiUrl}/info`, info)
   }
 
   update(id: number, info: any){
-    return this.http.put(`${API_BASE}/info/${id}`, info)
+    return this.http.put(`${environment.apiUrl}/info/${id}`, info)
   }
 
   delete(id: number){
-    return this.http.delete(`${API_BASE}/info/${id}`)
+    return this.http.delete(`${environment.apiUrl}/info/${id}`)
   }
 }

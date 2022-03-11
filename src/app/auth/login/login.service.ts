@@ -1,16 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-
-
-
+import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
 
 export class LoginService {
-
-  API_BASE = 'http://localhost:8080'
   token: any
 
   constructor(
@@ -18,7 +14,7 @@ export class LoginService {
   ) { }
 
   login(email: string, password: string) {
-    this.http.post(`${this.API_BASE}/authenticate`, { email: email, password: password })
+    this.http.post(`${environment.apiUrl}/authenticate`, { email: email, password: password })
       .subscribe((resp: any) => {
         this.router.navigate(['admin']);
         localStorage.setItem('auth_token', resp.token);

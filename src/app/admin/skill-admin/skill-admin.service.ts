@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
-const API_BASE = 'http://localhost:8080'
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -13,19 +12,19 @@ export class SkillAdminService {
   ) { }
 
   getAbility(){
-    return this.http.get(`${API_BASE}/habilidad`)
+    return this.http.get(`${environment.apiUrl}/habilidad`)
   }
 
   create(habilidad: any) {
-    return this.http.post(`${API_BASE}/habilidad`, habilidad)
+    return this.http.post(`${environment.apiUrl}/habilidad`, habilidad)
   }
 
   update(id: number, habilidad: any) {
-    return this.http.put(`${API_BASE}/habilidad/${id}`, habilidad)
+    return this.http.put(`${environment.apiUrl}/habilidad/${id}`, habilidad)
   }
 
   delete(id: number) {
-    return this.http.delete(`${API_BASE}/habilidad/${id}`)
+    return this.http.delete(`${environment.apiUrl}/habilidad/${id}`)
   }
 
 }

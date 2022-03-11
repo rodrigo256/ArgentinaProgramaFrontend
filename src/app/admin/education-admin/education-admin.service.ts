@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 const API_BASE = 'http://localhost:8080'
 
@@ -13,18 +14,18 @@ export class EducationAdminService {
   ) { }
 
   getTraining() {
-    return this.http.get(`${API_BASE}/formaciones`)
+    return this.http.get(`${environment.apiUrl}/formaciones`)
   }
 
   create(formacion: any) {
-    return this.http.post(`${API_BASE}/formaciones`, formacion)
+    return this.http.post(`${environment.apiUrl}/formaciones`, formacion)
   }
 
   update(id: number, formacion: any) {
-    return this.http.put(`${API_BASE}/formaciones/${id}`, formacion)
+    return this.http.put(`${environment.apiUrl}/formaciones/${id}`, formacion)
   }
 
   delete(id: number) {
-    return this.http.delete(`${API_BASE}/formaciones/${id}`)
+    return this.http.delete(`${environment.apiUrl}/formaciones/${id}`)
   }
 }
